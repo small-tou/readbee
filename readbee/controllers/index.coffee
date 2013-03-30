@@ -30,7 +30,7 @@ module.exports.controllers =
                   url:url
                   title:parseResult.title
                   content:parseResult.content
-                  desc:parseResult.content.replace(/<[^>]+?>/g,"").substr(0,100)
+                  desc:parseResult.content.replace(/<[^>]+?>/g,"").substr(0,500)
                 ,(error,art)->
                   if error
                     result.info = error.message

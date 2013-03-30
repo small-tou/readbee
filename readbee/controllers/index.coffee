@@ -18,6 +18,7 @@ module.exports.controllers =
       func_articles.getByUrl url,(error,art)->
         if art
           result.data = art
+          result.success = 1
           res.send result
         else
           request.get url,(e,s,entry)->
@@ -37,5 +38,6 @@ module.exports.controllers =
                     res.send result
                   else
                     result.data= art
+                    result.success = 1
                     result.is_realtime = 1 #表示是实时抓取而不是从数据库提取的
                     res.send result

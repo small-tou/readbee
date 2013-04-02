@@ -7,3 +7,4 @@ module.exports =
     type:"int"#被阅读次数
   desc:"text"
   url:"varchar(500)"
+  real_url:"varchar(500)"

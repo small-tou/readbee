@@ -37,3 +37,14 @@ module.exports=
         callback new Error 'no article'
     .error (error)->
       callback error
+  get:(id,callback)->
+    Articles.find
+      where:
+        id:id
+    .success (art)->
+      if art
+        callback null,art
+      else
+        callback new Error 'no article'
+    .error (error)->
+      callback error

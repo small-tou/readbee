@@ -8,6 +8,12 @@ module.exports.controllers =
   "/public":
     "get":(req,res,next)->
       res.render "public"
+  "/article":
+    "get":(req,res,next)->
+      func_articles.get req.query.id,(error,art)->
+        res.locals.article = art
+        res.render 'detail'
+      
   "/api/convert":
     "get":(req,res,next)->
       url = req.query.url.replace(/#.*$/,"") #替换掉符号后的字符
@@ -22,6 +28,7 @@ module.exports.controllers =
           res.send result
         else
           request.get url,(e,s,entry)->
+            console.log s 
             if e 
               result.info = e.message
               res.send result
@@ -32,6 +39,7 @@ module.exports.controllers =
                   title:parseResult.title
                   content:parseResult.content
                   desc:parseResult.content.replace(/<[^>]+?>/g,"").substr(0,500)
+                  real_url:s.request.href
                 ,(error,art)->
                   if error
                     result.info = error.message

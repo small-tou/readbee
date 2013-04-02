@@ -1,112 +1,41 @@
-@page_width:500px;
-@green_gray:#70d550;
-@blue:#4372ab;
-html{
-  background:#fff  url(http://img.naomi.cn/pic/img/serviceImgs/sng_header_bg.jpg)  center top;
-}
-body{
-  background:#f7f7f7;
-  width:@page_width;
-  border:1px solid #ddd;
-  margin:10px auto;
-  border-radius:5px;
-  padding:10px;
-  
-}
-.navbar-inner{
-  background: #f7f7f7;
-  border-radius: 3px;
-  box-shadow: none;
-  padding:0;
-}
-.wrapper{
-  width:@page_width;
-  margin:0 auto;
-}
-a{
-  color:#567cab;
-}
 #header{
-  h1{
-    margin:20px 0;
+.navbar{
+  .navbar-inner{
+    background:#fff;
+border-bottom:1px solid #f7f7f7;
+-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+li{
+}
+li.active{
+
+a{
+background:#f1f1f1;
+box-shadow:none;
+}
+}
+    a{
+padding:15px 30px 15px;
+    color:#666;
+text-shadow: none;
+}
   }
+}
 }
 
+
+
 #content{
-  .group{
-    margin-bottom:10px;
-    .group_hd{
-      border:1px solid #eee;
-      font-size:14px;
-      font-weight:bold;
-      height:30px;
-      line-height:30px;
-      padding:0 10px;
-      border-bottom:none;
-      background:#999;
-      color:#fff;
-    }
-    .group_bd{
-      background:#fff;
-      border:1px solid #eee;
-    }
-  }
-  
-  .item{
-    border-bottom:1px solid #ddd;
-    position:relative;
-    .item_title{
-      font-size:14px;
-      padding:5px 10px;
-      height:25px;
-      h2{
-        font-size:14px;
-        margin:0;
-        color:#333;
-        line-height:30px;
-      }
-    }
-    .item_lang{
-      display:none;
-      height:30px;
-      top:0;
-      left:0;
-      font-size:20px;
-      background:@green_gray;
-      color:#fff;
-      line-height:30px;
-      text-align:center;
-    }
-    .item_desc{
-      padding:10px;
-      color:#666;
-      font-size:12px;
-    }
-    .item_others{
-      height:25px;
-      color:#999;
-      line-height:20px;
-      padding-left:10px;
-      font-size:12px;
-      .item_time{
-        display:inline-block;
-        color:#999;
-      }
-      .item_actions{
-        display:inline-block;
-        a{
-          display:inline-block;
-          padding-right:10px;
-          font-size:12px;
-        }
-        a:hover{
-        }
-      }
-    }
-  }
-  .fold{
-    .item_desc{
-      display:none;
-    }
-  }
+padding-top:70px;
+.wrapper{
+width:940px;
+margin:0 auto;
+
+h1.art_title{
+font-size:24px;
+
+}
+}
+
 }

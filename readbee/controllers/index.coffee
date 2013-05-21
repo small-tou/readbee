@@ -4,15 +4,24 @@ func_articles = require './../functions/articles.coffee'
 module.exports.controllers = 
   "/":
     "get":(req,res,next)->
-      res.render "index"
+      view = 'index'
+      if req.query.app && req.query.app =="weiyue"
+        view = 'weibo/index'
+      res.render view
   "/public":
     "get":(req,res,next)->
       res.render "public"
   "/article":
     "get":(req,res,next)->
+      view = 'detail'
+      if req.query.app && req.query.app =="weiyue"
+        view = 'weibo/detail'
       func_articles.get req.query.id,(error,art)->
-        res.locals.article = art
-        res.render 'detail'
+        if error next error
+        else
+          func_articles.update req.query.id,{read_count:art.read_count+1},(error,art)->
+            res.locals.article = art
+            res.render view
       
   "/api/convert":
     "get":(req,res,next)->

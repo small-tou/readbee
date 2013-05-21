@@ -8,3 +8,4 @@ module.exports =
   desc:"text"
   url:"varchar(500)"
   real_url:"varchar(500)"
+  

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  - var pageName = 'detail'
+  include header
+  #content
+    .wrapper
+      
+      .article
+        h1.art_title #{article.title}
+        .art_content 
+        | !{article.content}
+          
+  include footer

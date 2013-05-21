@@ -12,26 +12,23 @@ app.configure ->
   app.set "view engine", "jade"
   app.use express.favicon()
   app.use "/assets",lessmiddle({src:__dirname+"/assets",compress:true})
-  app.use "/assets", express.static(__dirname+"/assets")
-  app.use "/uploads", express.static(__dirname+"/uploads")
- 
+  app.use "/assets",express.static(__dirname+"/assets")
+  app.use "/uploads",express.static(__dirname+"/uploads")
   app.use express.logger("dev")
   app.use express.bodyParser()
   app.use express.cookieParser()
   app.use express.cookieSession(secret: 'fd2afdsafdvcxzjaklfdsa')
   app.use express.methodOverride()
-  
   app.use app.router
-  rainbow.route(app, {  
-    controllers: '/controllers/',
-    filters:'/filters/',      
-    template:'/views/'   
-  })
+  rainbow.route app,
+    controllers: '/controllers/'
+    filters:'/filters/'
+    template:'/views/'
   app.use (err, req, res, next)->
     console.log err
-    res.render 'error.jade'
+    res.render 'error.jade',
       error:err
-  app.locals.moment= require 'moment'
-  app.locals.moment.lang('zh-cn');
-app.configure "development", ->
+  app.locals.moment = require 'moment'
+  app.locals.moment.lang('zh-cn')
+app.configure "development",->
   app.use express.errorHandler()

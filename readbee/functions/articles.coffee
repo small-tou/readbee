@@ -32,7 +32,7 @@ module.exports=
         id:id
     .success (art)->
       if art
-        art.updateAttributes data
+        art.updateAttributes(data)
         .success ()->
           callback null,art
         .error (error)->

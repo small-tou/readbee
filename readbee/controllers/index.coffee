@@ -34,6 +34,8 @@ module.exports.controllers =
         if art
           result.data = art
           result.success = 1
+          art.updateAttributes
+            convert_count:art.convert_count+1
           res.send result
         else
           request.get url,(e,s,entry)->

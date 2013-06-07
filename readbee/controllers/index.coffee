@@ -34,6 +34,7 @@ module.exports.controllers =
         if art
           result.data = art
           result.success = 1
+          
           func_articles.update art.id,{convert_count:art.convert_count+1},(error,art)->
             res.send result
         else

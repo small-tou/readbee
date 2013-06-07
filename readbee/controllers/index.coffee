@@ -35,7 +35,7 @@ module.exports.controllers =
           result.data = art
           result.success = 1
           art.updateAttributes
-            convert_count:art.convert_count+1
+            convert_count:art.convert_count*1+1
           res.send result
         else
           request.get url,(e,s,entry)->
